@@ -2,19 +2,19 @@
 
 This is an npm module to
 define reactive DOM elements with
-(virtual-dom)[https://github.com/Matt-Esch/virtual-dom]
-and (html-maker)[https://github.com/jgoizueta/html-maker],
+[virtual-dom](https://github.com/Matt-Esch/virtual-dom)
+and [html-maker](https://github.com/jgoizueta/html-maker),
 intended for CoffeScript use.
 
 ## Usage
 
 Using `ReactiveBuilder` a view is defined exactly as
-with (html-maker)[https://github.com/jgoizueta/html-maker].
+with [html-maker](https://github.com/jgoizueta/html-maker).
 
 The resulting object has an `update` method which is called
 passing arguments for the view. This method returns a DOM element.
 Each time it is called again the element is efficiently updated
-by using (virtual-dom)[https://github.com/Matt-Esch/virtual-dom].
+by using [virtual-dom](https://github.com/Matt-Esch/virtual-dom).
 
 ## Example
 
