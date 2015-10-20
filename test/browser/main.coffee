@@ -29,7 +29,7 @@ ReactiveBuilder = require '../../lib/reactive-builder'
 #       count: count
 #       countName: 'xyz'
 #     abc: '123'
-#   _.div class: 'dubler-container', =>
+#   _.div class: 'doubler-container', =>
 #     double_view _, count
 
 double_view = (count) ->
@@ -52,7 +52,7 @@ reactive = new ReactiveBuilder (count) ->
       count: count
       countName: 'xyz'
     abc: '123'
-  @div class: 'dubler-container', =>
+  @div class: 'doubler-container', =>
     @render double_view, count
 
 document.body.appendChild reactive.update count

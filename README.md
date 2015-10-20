@@ -35,7 +35,7 @@ reactive = new ReactiveBuilder (count) ->
       border: '1px solid red'
       width: 100 + count + 'px'
       height: 100 + count + 'px'
-  @div class: 'dubler-container', =>
+  @div class: 'doubler-container', =>
     @render double_view, count
 
 count = 0
