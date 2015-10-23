@@ -3,6 +3,18 @@ VNode = require 'virtual-dom/vnode/vnode'
 VText = require 'virtual-dom/vnode/vtext'
 HtmlMaker = require 'html-maker'
 
+Entities = [
+  # Some common entities
+  ['&times;', '\u00d7'],
+
+  # Entities escaped by HtmlMaker
+  ['&amp;', '\u0026'],
+  ['&lt;', '<'],
+  ['&gt;', '>'],
+  ['&quot;', '"'],
+  ['&#39;', "'"]
+]
+
 class ReactiveMaker extends HtmlMaker
   constructor: ->
     @nodes = []
@@ -58,6 +70,9 @@ class ReactiveMaker extends HtmlMaker
     @endTag name
 
   rawText: (string) ->
+    for [entity, subst] in Entities
+      expr = new RegExp(entity, 'g')
+      string = string.replace expr, subst
     @addNode new VText string
 
 module.exports = ReactiveMaker
